@@ -1,0 +1,32 @@
+{% extends "polls/base.html" %}
+{% load static %}
+{% block style%}<link rel="stylesheet" href="{%static 'polls/styles/index.css'%}">{% endblock %}
+{% block title%}Свежие Опросы{% endblock %}
+{% block content%}
+    {%if latest_question_list%}
+    <ul>
+        <h2 id="header">Опросы:</h2>
+        {%for question in latest_question_list%}
+        <li>
+            <label><a {% if question.is_active %} class="activepoll" {% endif %} href="{% url 'polls:detail' question.id %}">{{question.question_text}}{% if not question.is_active %}<i><u>(Завершён)</u></i>{% endif %}</a></label>
+        </li>
+        {% endfor %}
+        <li>
+            <label><a href="{% url 'polls:page' 0%}">. . .</a></label>
+        </li>
+    </ul>
+    <div id="add_btn">
+		<a href="{% url 'polls:create' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41">
+                <g id="add" transform="translate(-1160 -488)">
+                    <circle id="circle" cx="20.5" cy="20.5" r="20.5" transform="translate(1160 488)" fill="#ff6868"/>
+                    <line id="Линия_5" y2="25" transform="translate(1180.5 496.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+                    <line id="Линия_6" x1="25" transform="translate(1168 509)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+                </g>
+            </svg>
+        </a>
+   </div>
+    {%else%}
+    <h2 class="noquestions">Вопросоу нету?</h2>
+    {%endif%}
+{% endblock %}

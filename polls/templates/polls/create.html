@@ -1,0 +1,37 @@
+{% extends "polls/base.html" %}
+{% load static %}
+{% block style%}<link rel="stylesheet" href="{%static 'polls/styles/addpoll.css'%}">{% endblock %}
+{% block title%}Свежие Опросы{% endblock %}
+{% block content%}
+	<span class="back-arrow"><a href="{% url 'polls:index'%}"><img src="{% static 'polls/icons/arrow-back.svg' %}" alt="back" width="25px"></a></span>
+    <h2 id="header">Добавить опрос</h2>
+	<form action="{% url 'polls:created' %}" method="POST">
+		{%csrf_token%}
+	    <input type="text" name="question" class="inptitle" placeholder="Название опроса">
+
+		<div id="polls">
+		    <div class="inpdiv">
+		    	<input type="text" name="choice1" class="inpfield" placeholder="Вариант ответа">
+		    	<div class="del_btn_active"></div>
+		    </div>
+
+		    <div class="inpdiv">
+		    	<input type="text" name="choice2" class="inpfield" placeholder="Вариант ответа">
+		    	<div class="del_btn_active"></div>
+		    </div>
+		</div>
+		{% if error_message %} <h3 class="error_messege">{{error_message}}</h3> {% endif %}
+		<div id="add_btn">
+			<svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41">
+				<g id="add" transform="translate(-1160 -488)">
+			    	<circle id="circle" cx="20.5" cy="20.5" r="20.5" transform="translate(1160 488)" fill="#ff6868"/>
+			    	<line id="Линия_5" y2="25" transform="translate(1180.5 496.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+			    	<line id="Линия_6" x1="25" transform="translate(1168 509)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+			  	</g>
+			</svg>
+		</div>
+		<input type="hidden" name="choice_counter" value="2" id="counter_field">
+ 		<input type="submit" id="submit_btn" value="Создать">
+ 	</form>
+{% endblock %}
+{% block script %} <script src="{% static 'polls/scripts/addpoll.js' %}"></script> {% endblock %}

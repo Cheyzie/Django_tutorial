@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опрос 3</title>
+</head>
+<body>
+    <h1>Максім криса?</h1>
+    
+    <form action="/polls/3/vote" method="post"> 
+        <input type="hidden" name="csrfmiddlewaretoken" value="PzexcGsWAxloBVr5CEhAgpCJZmdrWmeJvwu4b11NCDeX9uMXGgj40bB5AvaivBgk">
+        
+            <input type="radio" name="coice" id="choice1" value="1">
+            <label for="choice1">Да</label><br>
+        
+            <input type="radio" name="coice" id="choice2" value="2">
+            <label for="choice2">Атвічаю</label><br>
+        
+            <input type="radio" name="coice" id="choice3" value="3">
+            <label for="choice3">Бля буду</label><br>
+        
+        <input type="submit" value="Vote">
+    </form>
+</body>
+</html>

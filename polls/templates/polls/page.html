@@ -1,0 +1,23 @@
+{% extends "polls/base.html" %}
+{% load static %}
+{% block style%}<link rel="stylesheet" href="{%static 'polls/styles/index.css'%}">{% endblock %}
+{% block title%}Свежие Опросы{% endblock %}
+{% block content%}
+    {%if latest_question_list%}
+    <ul>
+        <h2 id="header">Опросы:</h2>
+        {%for question in latest_question_list%}
+        <li>
+            <label><a {% if question.is_active %} class="activepoll" {% endif %} href="{% url 'polls:detail' question.id %}">{{question.question_text}}{% if not question.is_active %}<i><u>(Завершён)</u></i>{% endif %}</a></label>
+        </li>
+        {% endfor %}
+        <li><label>
+            <a href="{% url 'polls:page' prev_page %}"><img src="{% static 'polls/icons/prev_page.svg' %}" alt="back" height="30px"></a>
+            <div style="bottom: 7px; display: inline-block; position: relative;">Страница: {{page}}</div>
+            <a href="{% url 'polls:page' next_page %}"><img src="{% static 'polls/icons/next_page.svg' %}" alt="back" width="30px"></a>
+        </label></li>
+    </ul>
+    {%else%}
+    <h2 class="noquestions">Вопросоу больше нету?<br>Page: {{page}}</h2>
+    {%endif%}
+{% endblock %}

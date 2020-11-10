@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body, html{
+  height: auto;
+  background: -webkit-linear-gradient(left , #FFD2D2, #FFCBEE, #FDC8FF);
+	font-family: 'Lato', sans-serif;
+}
+
+.resrect{
+	display: inline-block;
+	background: #FF6868;
+	height: 8px;
+	width: 0px;
+
+	border-radius: 8px;
+	padding-right: 2px;
+	margin-left: 5px;	
+}
+
+li {
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+.votetext{
+	display: block;
+	padding-right: 2px;
+	font-size: 1.4em;
+	color: #9C9C9C;
+}
+
+.pertext{
+	display: inline-block;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+
+
+#header{
+  color: #242424;
+  font-weight: bolder;
+  font-size: 2em;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 0px;
+}
+
+.container{
+  display: block;
+  position: relative;
+  margin: 40px auto;
+  height: auto;
+  width: 40%;
+  top:10vh;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 37px;
+}
+
+li {
+	list-style-type: none;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #313131;
+	height: 70px;
+
+
+}
+
+ul {
+	margin-bottom: 40px;
+	padding-left: 0px;
+}
+a {
+	cursor: pointer;
+	color: #AAAAAA;
+	text-decoration: none;
+
+}
+a:hover {
+color: #FF5050;
+}
+
+.votetextin {
+    position: relative;
+    display: inline-block;
+}
+.votetextin .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 110%;
+}
+
+.votetextin .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+.votetext:hover .tooltiptext {
+    visibility: visible;
+}

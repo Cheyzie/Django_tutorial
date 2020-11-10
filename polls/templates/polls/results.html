@@ -1,0 +1,22 @@
+{% extends "polls/base.html" %}
+{% load static %}
+{% block style%}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/styles/results.css' %}">
+{% endblock %}
+{% block title %}Результати{% endblock %}
+{%block content%}   
+    <span class="back-arrow"><a href="{% url 'polls:index'%}"><img src="{% static 'polls/icons/arrow-back.svg' %}" alt="back" width="25px"></a></span>
+    <ul id="ul1">
+        <h2 id="header">{{question.question_text}}</h2>
+        {% for choice in question.choice_set.all %}
+        <li value="{{ choice.votes }}" id="res{{ forloop.counter }}" class="inp">
+            <div class="votetext">
+                <div class="votetextin">{{choice.choice_text}}<span class="tooltiptext">Голосов: {{choice.votes}}</span></div>
+            </div>
+            <div class="pertext" id="per{{ forloop.counter }}"></div>
+			<div id="div{{ forloop.counter }}" class="resrect"></div>
+        </li>
+        {% endfor %}
+    </ul>
+{%endblock%}
+{% block script %} <script src="{% static 'polls/scripts/results.js' %}"></script> {% endblock %}

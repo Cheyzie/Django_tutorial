@@ -1,0 +1,153 @@
+@font-face {
+font-family: "Bahnshrift";  
+src: url('../fonts/12002.ttf') format("truetype"); 
+font-style: normal; 
+font-weight: normal;
+font-stretch: semi-condensed;
+ }
+
+body, html{
+  height: auto;
+  background: -webkit-linear-gradient(left , #FFD2D2, #FFCBEE, #FDC8FF);
+	font-family: 'Bahnshrift';
+}
+
+.container{
+  display: block;
+  position: relative;
+  margin: 40px auto;
+  height: auto;
+  width: 40%;
+  top:10vh;
+  padding: 40px;
+  background-color: #FFFFFF;
+  border-radius: 37px;
+}
+
+#header{
+  font-weight: 500;
+  font-size: 2em;
+  color: #202020;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 0px;
+}
+
+.titles{
+  font-weight: 500;
+  font-size: 1.7em;
+  color: #787878;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+#submit_btn{
+  font-size: 1.35em;
+  height: 60px;
+  width: 180px;
+  border-radius: 12px;
+  display: block;
+  margin: 20px auto;
+  outline: none;
+  border: none;
+  background-color: #3B3B3B;
+  color: #FFFFFF;
+
+}
+
+#submit_btn:hover{
+  background: #535353;
+}
+
+#circle:hover{
+fill:  #FF568A;
+}
+
+#add_btn{
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+  height: 41px;
+  width: 41px;
+  background-color: #FFFFFF;
+  border-radius: 37px;
+}
+
+.inpfield{
+  margin-bottom: 30px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #9C9C9C;
+  font-size: 1.35em;
+  width: 90%;
+  color: #575757;
+  display: inline-block;
+  height: 38px;
+  opacity: inherit;
+  font-family: 'Bahnshrift';
+}
+
+.inptitle{
+  margin-bottom: 20px;
+  outline: none;
+  border: none;
+
+  border-bottom: 2px solid #9C9C9C;
+  font-size: 1.5em;
+  width: 100%;
+  color: #575757;
+  height: 38px;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'Bahnshrift';
+}
+
+.inpdiv{
+  display: block;
+}
+
+.del_btn_active{
+  display: inline-block;
+  float: right;
+  width: 40px;
+  height: 40px;
+  background-image: url('../icons/del.png');
+  opacity: inherit;
+}
+
+.del_btn_inactive{
+  display: inline-block;
+  float: right;
+  width: 40px;
+  height: 40px;
+  background-image: url('../icons/del_inactive.png');
+}
+
+input::placeholder {
+  color: #9C9C9C;
+}
+
+#polls{
+  margin-top: 10px;
+}
+
+.inptitle::placeholder
+{
+
+  color: #9C9C9C;
+  text-align: center;
+  font-weight: 300;
+}
+.error_messege{
+  color: crimson;
+  font-weight: 100;
+}
+.back-arrow{
+  position: absolute;
+  left: 23px;
+  top: 20px;
+  z-index: 22;
+ }
