@@ -87,7 +87,7 @@ color: #FF5050;
 }
 .votetextin .tooltiptext {
     visibility: hidden;
-    width: auto;
+    width: 200px;
     background-color: black;
     color: #fff;
     text-align: center;

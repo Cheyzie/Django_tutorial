@@ -5,6 +5,7 @@
 {% block content%}
     {%if latest_question_list%}
     <ul>
+        <span class="back-arrow"><a href="{% url 'polls:index'%}"><img src="{% static 'polls/icons/arrow-back.svg' %}" alt="back" width="25px"></a></span>
         <h2 id="header">Опросы:</h2>
         {%for question in latest_question_list%}
         <li>
