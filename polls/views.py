@@ -21,6 +21,10 @@ import datetime
 #     question = get_object_or_404(Question, pk=question_id )
 #     return render(request, 'polls/results.html', {'question':question})
 
+class Custom404View(generic.TemplateView):
+    template_name = 'polls/404.html'
+
+
 def created(request):
 
     question_text = request.POST['question'] 
